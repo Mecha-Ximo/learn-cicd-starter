@@ -42,7 +42,7 @@ func TestGetApiKey(t *testing.T) {
 		{
 			header: header3,
 			result: "my-secret-key",
-			err:nil,
+			err:    nil,
 		},
 	}
 
