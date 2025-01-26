@@ -9,9 +9,9 @@ import (
 func TestGetApiKey(t *testing.T) {
 
 	type test struct {
-		header 	http.Header
-		result 	string
-		err		error
+		header http.Header
+		result string
+		err    error
 	}
 
 	header1 := http.Header{}
@@ -27,22 +27,22 @@ func TestGetApiKey(t *testing.T) {
 		{
 			header: http.Header{},
 			result: "",
-			err: ErrNoAuthHeaderIncluded,
+			err:    ErrNoAuthHeaderIncluded,
 		},
 		{
 			header: header1,
 			result: "",
-			err: errors.New("malformed authorization header"),
+			err:    errors.New("malformed authorization header"),
 		},
 		{
 			header: header2,
 			result: "",
-			err: errors.New("malformed authorization header"),
+			err:    errors.New("malformed authorization header"),
 		},
 		{
 			header: header3,
 			result: "my-secret-key",
-			err: nil,
+			err:nil,
 		},
 	}
 
